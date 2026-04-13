@@ -1,67 +1,70 @@
-إليك ejemplo HTML لصفحة الهبوط:
-
 <!DOCTYPE html>
-<html dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
-  <title>Tap Rewards - Earn Rewards</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0a192f;
-      color: #fff;
-      text-align: center;
-    }
-    .container {
-      max-width: 400px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .counter {
-      font-size: 48px;
-      font-weight: bold;
-      color: #64ffda;
-    }
-    .cta {
-      background-color: #64ffda;
-      color: #0a192f;
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .cta:hover {
-      background-color: #56ffd5;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Rewards - Earn Rewards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a192f;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .cta {
+            background-color: #64ffda;
+            color: #0a192f;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .cta:hover {
+            background-color: #56ffd3;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tap Rewards - Earn Rewards</h1>
-    <p>اكسب جوائز رائعة!</p>
-    <div class="counter">
-      <span id="counter">10:00</span>
+    <div class="container">
+        <h1>Tap Rewards - Earn Rewards</h1>
+        <p>earn rewards now!</p>
+        <div class="countdown" id="countdown">05:00</div>
+        <button class="cta" onclick="window.location.href='https://mob.v8trck.com/click?pid=2&offer_id=17183&sub2=u168235&sub7=rfnull&sub8=rdnull&sub15=fe8454c8ea2e'">Get Rewards</button>
     </div>
-    <p>استعد للاشتراك في البرنامج!</p>
-    <button class="cta" onclick="window.location.href='https://mob.v8trck.com/click?pid=2&offer_id=17183&sub2=u168235&sub7=rfnull&sub8=rdnull&sub15=e01fdb77ecea'">اشترك الآن</button>
-  </div>
-  <script>
-    let counter = 600; // 10 دقائق
-    let intervalId = setInterval(() => {
-      let minutes = Math.floor(counter / 60);
-      let seconds = counter % 60;
-      document.getElementById("counter").innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      counter--;
-      if (counter < 0) {
-        clearInterval(intervalId);
-      }
-    }, 1000);
-  </script>
+    
+    <script>
+        let countdown = 300; // 5 minutes in seconds
+        const countdownElement = document.getElementById('countdown');
+        
+        setInterval(() => {
+            let minutes = Math.floor(countdown / 60);
+            let seconds = countdown % 60;
+            countdownElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            countdown--;
+            if (countdown < 0) {
+                countdown = 0;
+                countdownElement.textContent = '00:00';
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
-
-هذه الصفحة تحتوي على عداد تنازلي يتدرج من 10 دقائق، وزر CTA أخضر يوجه إلى الرابط المحدد. التصميم يستخدم الألوان #0a192f و #64ffda. الصفحة هي في اتجاه اللغة العربية (RTL).
