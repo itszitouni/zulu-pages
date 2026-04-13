@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickBox - Earn Bonus</title>
+    <title>Tap Rewards - Earn Rewards</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #0a192f;
+            color: #fff;
             padding: 20px;
-            text-align: right;
+            text-align: center;
+            direction: rtl;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 40px auto;
-            padding: 20px;
             background-color: #fff;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .headline {
+        .header {
+            background-color: #64ffda;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+        .countdown {
             font-size: 24px;
             font-weight: bold;
-            color: #64ffda;
-            margin-bottom: 10px;
-        }
-        .timer {
-            font-size: 18px;
-            color: #64ffda;
             margin-bottom: 20px;
         }
         .benefits {
@@ -39,15 +40,10 @@
             margin-bottom: 10px;
         }
         .benefits li::before {
-            content: "👉";
+            content: "\2713";
             font-size: 18px;
             color: #64ffda;
             margin-left: 10px;
-        }
-        .social-proof {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
         }
         .cta {
             background-color: #64ffda;
@@ -56,44 +52,45 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
         }
         .cta:hover {
-            background-color: #4affcc;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
+            background-color: #56ffd5;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="headline">🚀 ClickBox - Earn Bonus 🚀</h1>
-        <p class="timer" id="timer">الوقت المتبقي: 00:10:00</p>
+        <div class="header">
+            <h1>Tap Rewards - Earn Rewards</h1>
+        </div>
+        <div id="countdown" class="countdown">00:00:00</div>
         <ul class="benefits">
-            <li>فائدة 1: العودة إلى المنزل بثروة</li>
-            <li>فائدة 2: زيادة الدخل بشكل متسارع</li>
-            <li>فائدة 3: فرصة للربح كل دقيقة</li>
+            <li>فائدة 1: تحسين الخبرات الخاصة بك</li>
+            <li>فائدة 2: كسب المكافآت بشكل أسرع</li>
+            <li>فائدة 3: الوصول إلى عروض حصرية</li>
         </ul>
-        <p class="social-proof">أكثر من 10,000 مستخدم يثقون في ClickBox</p>
-        <button class="cta" onclick="window.location.href='https://mob.v8trck.com/click?pid=2&offer_id=13175&sub2=u168235&sub7=rfnull&sub8=rdnull&sub15=8797def5f1d5'">اشترك الآن</button>
+        <a href="https://mob.v8trck.com/click?pid=2&offer_id=17183&sub2=u168235&sub7=rfnull&sub8=rdnull&sub15=d9627b44e9af" class="cta">انضم الآن</a>
     </div>
+
     <script>
-        let countdown = 600; // 10 دقائق
-        let timer = document.getElementById("timer");
-        let interval = setInterval(function() {
-            let minutes = Math.floor(countdown / 60);
-            let seconds = countdown % 60;
-            timer.textContent = `الوقت المتبقي: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            countdown--;
-            if (countdown === 0) {
-                clearInterval(interval);
-                timer.textContent = "انتهى الوقت";
+        const countdownElement = document.getElementById('countdown');
+        const deadline = new Date().getTime() + 60000; // 1 minute
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = deadline - now;
+            const minutes = Math.floor(distance / 60000);
+            const seconds = Math.floor((distance % 60000) / 1000);
+
+            countdownElement.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (distance < 0) {
+                countdownElement.innerText = '00:00:00';
+            } else {
+                setTimeout(updateCountdown, 1000);
             }
-        }, 1000);
+        }
+
+        updateCountdown();
     </script>
 </body>
 </html>
