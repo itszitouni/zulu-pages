@@ -1,22 +1,99 @@
-
-    <!DOCTYPE html>
-    <html lang="ar" dir="rtl">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Zulu Offer</title>
-        <style>
-            body { background: #0a192f; color: white; font-family: sans-serif; text-align: center; padding: 40px 10px; }
-            .card { background: #112240; border: 1px solid #64ffda; border-radius: 10px; padding: 20px; max-width: 400px; margin: auto; }
-            .btn { display: block; background: #64ffda; color: #0a192f; padding: 15px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <h2>عرض خاص متاح لك الآن</h2>
-            <p>يمكنك الحصول على: <b>ClickBox - Earn Bonus</b></p>
-            <a href="https://mob.v8trck.com/click?pid=2&offer_id=13175&sub2=u168235&sub7=rfnull&sub8=rdnull&sub15=f45f284d021d" class="btn">تفعيل العرض الآن</a>
-        </div>
-    </body>
-    </html>
-    
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickBox - Earn Bonus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a192f;
+            padding: 20px;
+            text-align: right;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .headline {
+            font-size: 24px;
+            font-weight: bold;
+            color: #64ffda;
+            margin-bottom: 10px;
+        }
+        .timer {
+            font-size: 18px;
+            color: #64ffda;
+            margin-bottom: 20px;
+        }
+        .benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .benefits li {
+            margin-bottom: 10px;
+        }
+        .benefits li::before {
+            content: "👉";
+            font-size: 18px;
+            color: #64ffda;
+            margin-left: 10px;
+        }
+        .social-proof {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .cta {
+            background-color: #64ffda;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta:hover {
+            background-color: #4affcc;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="headline">🚀 ClickBox - Earn Bonus 🚀</h1>
+        <p class="timer" id="timer">الوقت المتبقي: 00:10:00</p>
+        <ul class="benefits">
+            <li>فائدة 1: العودة إلى المنزل بثروة</li>
+            <li>فائدة 2: زيادة الدخل بشكل متسارع</li>
+            <li>فائدة 3: فرصة للربح كل دقيقة</li>
+        </ul>
+        <p class="social-proof">أكثر من 10,000 مستخدم يثقون في ClickBox</p>
+        <button class="cta" onclick="window.location.href='https://mob.v8trck.com/click?pid=2&offer_id=13175&sub2=u168235&sub7=rfnull&sub8=rdnull&sub15=8797def5f1d5'">اشترك الآن</button>
+    </div>
+    <script>
+        let countdown = 600; // 10 دقائق
+        let timer = document.getElementById("timer");
+        let interval = setInterval(function() {
+            let minutes = Math.floor(countdown / 60);
+            let seconds = countdown % 60;
+            timer.textContent = `الوقت المتبقي: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            countdown--;
+            if (countdown === 0) {
+                clearInterval(interval);
+                timer.textContent = "انتهى الوقت";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
